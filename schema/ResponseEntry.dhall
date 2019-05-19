@@ -1,3 +1,2 @@
 let ResponseOrReference = ./ResponseOrReference.dhall
-
-in { mapKey : Text, mapValue : ResponseOrReference }  
+in { mapKey : Text, mapValue : ResponseOrReference }

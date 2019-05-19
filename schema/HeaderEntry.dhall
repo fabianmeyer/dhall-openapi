@@ -1,3 +1,2 @@
-let  HeaderOrReference = ./HeaderOrReference.dhall
-
-in { mapKey : Integer, mapValue : HeaderOrReference }  
+let HeaderOrReference = ./HeaderOrReference.dhall
+in { mapKey : Text, mapValue : HeaderOrReference }

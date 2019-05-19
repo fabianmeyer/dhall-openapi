@@ -1,3 +1,2 @@
-let  LinkOrReference = ./LinkOrReference.dhall
-
-in { mapKey : Integer, mapValue : LinkOrReference }  
+let LinkOrReference = ./LinkOrReference.dhall
+in { mapKey : Text, mapValue : LinkOrReference }

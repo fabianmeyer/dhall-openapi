@@ -1,4 +1,2 @@
-let Callback = ./Callback.dhall
-let Reference = ./Reference.dhall
-
-in { mapKey : Text, mapValue : <Callback | Reference> } 
+let CallbackOrReference = ./CallbackOrReference.dhall
+in { mapKey : Text, mapValue : CallbackOrReference }
