@@ -11,13 +11,16 @@ let License = ./License.dhall
 let LinkEntry = ./LinkEntry.dhall
 let Operation = ./Operation.dhall
 let ParameterEntry = ./ParameterEntry.dhall 
+let ParameterOrReference = ./ParameterOrReference.dhall
 let PathEntry = ./PathEntry.dhall
 let Reference = ./Reference.dhall
 let RequestBodyEntry = ./RequestBodyEntry.dhall
+let RequestBodyOrReference = ./RequestBodyOrReference.dhall
 let ResponseEntry = ./ResponseEntry.dhall
 let ResponseEntry = ./ResponseEntry.dhall 
 let Schema = ./Schema.dhall
 let SchemaEntry = ./SchemaEntry.dhall 
+let SchemaOrReference = ./SchemaOrReference.dhall
 let SecurityRequirement = ./SecurityRequirement.dhall
 let SecuritySchemeEntry = ./SecuritySchemeEntry.dhall
 let Server = ./Server.dhall
@@ -49,7 +52,7 @@ in {
   , license = None License } 
 
 , MediaType = { 
-     schema = None <Schema | Reference>
+     schema = None SchemaOrReference
    , examples = [] : List ExampleEntry
    , encoding = [] : List EncodingEntry }
 
@@ -67,8 +70,8 @@ in {
   , description = None Text  
   , externalDocs = None ExternalDocumentation
   , operationId = None Text
-  , parameters = [] : List <Parameter | Reference >
-  , requestBody = None <RequestBody | Reference>
+  , parameters = [] : List ParameterOrReference
+  , requestBody = None RequestBodyOrReference
   , responses = [] : List ResponseEntry
   , callbacks = [] : List CallbackEntry
   , deprecated = None Bool
@@ -94,7 +97,8 @@ in {
   , patch = None Operation
   , trace = None Operation
   , servers = [] : List Server
-  , parameters = [] : List <Parameter | Reference> }
+  , parameters = [] : List ParameterOrReference 
+  }
 
 , Response = { 
     headers = [] : List HeaderEntry

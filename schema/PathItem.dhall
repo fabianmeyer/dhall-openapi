@@ -1,4 +1,5 @@
 let Operation = ./Operation.dhall
+let ParameterOrReference = ./ParameterOrReference.dhall
 let Reference = ./Reference.dhall 
 let Server = ./Server.dhall
 
@@ -14,4 +15,4 @@ in { `$ref` : Optional Text
    , patch : Optional Operation
    , trace : Optional Operation
    , servers : List Server
-   , parameters : List <Parameter | Reference> }
+   , parameters : List ParameterOrReference }

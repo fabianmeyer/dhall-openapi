@@ -1,9 +1,9 @@
 let Defaults = ./schema/Defaults.dhall
+let MediaType = ./schema/MediaType.dhall
 let OpenAPI = ./schema/OpenAPI.dhall 
 let RequestBodyOrReference = ./schema/RequestBodyOrReference.dhall
-let SchemaOrReference = ./schema/SchemaOrReference.dhall
 let ResponseOrReference = ./schema/ResponseOrReference.dhall
-let MediaType = ./schema/MediaType.dhall
+let SchemaOrReference = ./schema/SchemaOrReference.dhall
 
 {-- Info --}
 let apacheLicence = 
@@ -102,7 +102,8 @@ let addPet = Defaults.Operation //
 
 let petPath = Defaults.PathItem // 
   { put = Some updatePet
-  , post = Some addPet }
+  , post = Some addPet 
+  }
 
 let paths = [ 
     { mapKey = "/pet", mapValue = petPath }
@@ -119,5 +120,5 @@ in Defaults.OpenAPI //
   , servers = servers
   , tags = tags
   , paths = paths
-  -- , components = components 
+  , components = components 
   } : OpenAPI

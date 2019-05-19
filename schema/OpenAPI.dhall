@@ -11,7 +11,7 @@ in
 , info: Info 
 , servers : List Server  
 , paths : List PathEntry
--- , components : Optional Components
+, components : Optional Components
 , security : List SecurityRequirement
 , tags : List Tag
 , externalDocs : Optional ExternalDocumentation
